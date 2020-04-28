@@ -77,6 +77,8 @@ var measureControl = new L.Control.Measure({
 });
 measureControl.addTo(map);
 
+var ctlMouseposition = L.control.mousePosition().addTo(mymap);
+
 document.getElementsByClassName('leaflet-control-measure-toggle')[0].innerHTML = '';
 document.getElementsByClassName('leaflet-control-measure-toggle')[0].className += ' fas fa-ruler';
 var bounds_group = new L.featureGroup([]);
@@ -224,10 +226,10 @@ function addPoints(data) {
     // COMMENT THE NEXT 14 LINES TO DISABLE SIDEBAR FOR THE MARKERS
     marker.feature = {
       properties: {
-        APN_Parcel: data[row].APN_Parcel,
+        APN_Parcel: data[row].APN_Parcel_GIS_Layer,
         Include: data[row].Include,
         Address: data[row].Address,
-        APN_Real: data[row].APN_Real,
+        APN_Real: data[row].APN_Real_From_Review,
         Review_Type_all: data[row].Review_Type_all,
         Review_Type1: data[row].Review_Type1,
         Review_Type2: data[row].Review_Type2,
