@@ -457,7 +457,9 @@ overlays = {
 
 L.control.layers(baseLayers, overlays, {collapsed : false}).addTo(map);
 
-/*function addLegend(scale, scaleType, title) {
+
+
+function addLegend(scale, scaleType, title) {
     var svg = d3.select("#legend")
       .append("svg")
         .style("width", 300)
@@ -479,10 +481,10 @@ L.control.layers(baseLayers, overlays, {collapsed : false}).addTo(map);
 
     svg.select("g.legend")
       .call(legend);
-}*/
+}
 
 
-var legend = L.control({position: 'topright'});
+/*var legend = L.control({position: 'topright'});
 legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'info legend');
     div.innerHTML +=
@@ -496,7 +498,7 @@ legend.onAdd = function (map) {
             '<text x="40" y="85" style="font-family: sans-serif; font-size: 12px;">Regional Project</text>' +
         '</svg>';
     return div;
-}
+}*/
 
 
 
