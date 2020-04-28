@@ -459,31 +459,61 @@ L.control.layers(baseLayers, overlays, {collapsed : false}).addTo(map);
 
 
 
- function getRadius(r) {
-return  r > 100 ? 12 :
-        r > 50 ? 9 :
-        r > 20 ? 6 :
-        r > 10 ? 4 :
-        0;
+function getRadius(r) {
+    return  r > 100 ? 12 :
+            r > 50 ? 9 :
+            r > 20 ? 6 :
+            r > 10 ? 4 :
+            0;
 }
 
  var legend = L.control({position: 'bottomright'});
- legend.onAdd = function (map) {
 
- var div = L.DomUtil.create('div', 'info legend');
- grades = [15, 40, 80, 400],
- labels = ['<strong>Amount of units</strong>'],
- categories = ['N/A','<50','51-100', '>100'];
+ /*legend.onAdd = function (map) {
 
- for (var i = 0; i < grades.length; i++) {
-        var grade = grades[i];//*0.5;
-   labels.push(
-        '<i class="circlepadding" style="width: '+Math.max(8,(7-2.2*getRadius(grade)))+'px;"></i> <i style="background: #8080A0; width: '+getRadius(grade)*2+'px; height: '+getRadius(grade)*2+'px; border-radius: 50%; margin-top: '+Math.max(0,(9-getRadius(grade)))+'px;"></i><i class="circlepadding" style="width: '+Math.max(2,(25-2*getRadius(grade)))+'px;"></i> ' + categories[i]);
-   }
- div.innerHTML = labels.join('<br>');
- return div;
+     var div = L.DomUtil.create('div', 'info legend');
+     grades = [15, 40, 80, 400],
+     labels = ['<strong>Amount of units</strong>'],
+     categories = ['N/A','<50','51-100', '>100'];
+
+     for (var i = 0; i < grades.length; i++) {
+            var grade = grades[i];//*0.5;
+       labels.push(
+            '<i class="circlepadding" style="width: '+Math.max(8,(7-2.2*getRadius(grade)))+'px;"></i> <i style="background: #8080A0; width: '+getRadius(grade)*2+'px; height: '+getRadius(grade)*2+'px; border-radius: 50%; margin-top: '+Math.max(0,(9-getRadius(grade)))+'px;"></i><i class="circlepadding" style="width: '+Math.max(2,(25-2*getRadius(grade)))+'px;"></i> ' + categories[i]);
+       }
+     div.innerHTML = labels.join('<br>');
+     return div;
+ };
+ legend.addTo(map);*/
+
+
+legend.onAdd = function (map) {
+
+     var div = L.DomUtil.create('div', 'info legend');
+     grades = [15, 40, 80, 400],
+     labels = ['<strong>Amount of units</strong>'],
+     categories = ['N/A','<50','51-100', '>100'];
+
+     for (var i = 0; i < grades.length; i++) {
+            var grade = grades[i];//*0.5;
+       labels.push(
+            '<b> Project Type: </b><br>'+ 
+        '<svg height="100" width="180">' +
+            '<rect x="6" y="10" width="25" height="20" style="stroke-width: 3; stroke: limegreen;  fill: limegreen; fill-opacity:0.5;"/>' +
+            '<text x="40" y="25" style="font-family: sans-serif; font-size: 12px;">Parcel-based</text>' +
+            '<rect x="6" y="40" width="25" height="20" style="stroke-width: 3; stroke: blue; fill: blue; fill-opacity:0.5;"/>' +
+            '<text x="40" y="55" style="font-family: sans-serif; font-size: 12px;">Green Street</text>' +
+            '<rect x="6" y="70" width="25" height="20" style="stroke-width: 3; stroke: yellow; fill: yellow; fill-opacity:0.5;"/>' +
+            '<text x="40" y="85" style="font-family: sans-serif; font-size: 12px;">Regional Project</text>' +
+        '</svg>';
+       }
+     div.innerHTML = labels.join('<br>');
+     return div;
  };
  legend.addTo(map);
+
+
+
 
 /*var legend = L.control({position: 'topright'});
 legend.onAdd = function (map) {
