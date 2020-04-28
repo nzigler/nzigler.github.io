@@ -491,14 +491,14 @@ legend.onAdd = function (map) {
 
      var div = L.DomUtil.create('div', 'info legend');
      div.innerHTML = '<b> Project Status</b><br>'+ 
-        '<svg height="90" width="120">' +
-            '<ellipse cx="18" cy="18" rx="7" ry="7" style="stroke-width: 1.2; stroke: black;  fill: red; fill-opacity:0.8;"/>' +
+        '<svg height="85" width="115">' +
+            '<ellipse cx="18" cy="16" rx="7" ry="7" style="stroke-width: 1.2; stroke: black;  fill: red; fill-opacity:0.8;"/>' +
             '<text x="40" y="20" font-size: 12px>Active</text>' +
-            '<ellipse cx="18" cy="38" rx="7" ry="7" style="stroke-width: 1.2; stroke: black;  fill: blue; fill-opacity:0.8;"/>' +
+            '<ellipse cx="18" cy="36" rx="7" ry="7" style="stroke-width: 1.2; stroke: black;  fill: blue; fill-opacity:0.8;"/>' +
             '<text x="40" y="40" font-size: 12px>Complete</text>' +
-            '<ellipse cx="18" cy="58" rx="7" ry="7" style="stroke-width: 1.2; stroke: black;  fill: yellow; fill-opacity:0.8;"/>' +
+            '<ellipse cx="18" cy="56" rx="7" ry="7" style="stroke-width: 1.2; stroke: black;  fill: yellow; fill-opacity:0.8;"/>' +
             '<text x="40" y="60" font-size: 12px>Pending</text>' +
-            '<ellipse cx="18" cy="78" rx="7" ry="7" style="stroke-width: 1.2; stroke: black;  fill: gray; fill-opacity:0.8;"/>' +
+            '<ellipse cx="18" cy="76" rx="7" ry="7" style="stroke-width: 1.2; stroke: black;  fill: gray; fill-opacity:0.8;"/>' +
             '<text x="40" y="80" font-size: 12px>blank</text>' +
             
         '</svg>';
