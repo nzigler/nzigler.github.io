@@ -269,7 +269,8 @@ function addPoints(data) {
             "<TR><TD><b>Comments from CSG: </b></TD><TD>" + e.target.feature.properties.Comments_CSG + "</TD></TR>" +  
             "<TR><TD><b>Comments from City: </b></TD><TD>" + e.target.feature.properties.Comments_City + "</TD></TR>" +  
             "<TR><TD><b>File Path CSG: </b></TD><TD>" + e.target.feature.properties.File_Path + "</TD></TR>" + 
-            /*"<TR><TD colspan='2'> <img src=" + e.target.feature.properties.Photo + " width='250'></TD></TR>" +*/  
+            "<TR><TD><b>Associated Document: </b></TD><TD><A HREF='docs/" + e.target.feature.properties.Doc1 + "'>" + e.target.feature.properties.Doc1 + "</A></TD></TR>" + 
+            "<TR><TD colspan='2'> <img src=photos/" + e.target.feature.properties.Photo1 + " width='250'></TD></TR>" +  
             "</TABLE>";
           
         sidebar.open(panelID);
