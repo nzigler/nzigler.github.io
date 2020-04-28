@@ -430,7 +430,11 @@ baseLayers = {
 
 lyrCities = L.geoJSON.ajax('data/SMC_Cities_lines.geojson', {style:{color:'yellow', fillOpacity:0}});// .addTo(mymap);
 lyrParcels = L.geoJSON.ajax('data/SMC_Parcels_San_Carlos_lines_reduced.geojson', {style:{color:'white', fillOpacity:0, weight:1.5}}); //.addTo(mymap);
-lyrCreeks = L.geoJSON.ajax('data/SMC_Creeks.geojson', {style:{color:'aqua'}}).addTo(map);
+lyrCreeks = L.geoJSON.ajax('data/SMC_Creeks.geojson', {style:{color:'aqua'}});//.addTo(map);
+
+map.on("overlayadd", function (event) {
+  init();
+});
 
 overlays = {
     "City Boundaries":lyrCities,
