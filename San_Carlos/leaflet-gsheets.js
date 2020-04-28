@@ -27,7 +27,7 @@ function init() {
   // the first is the polygon layer and the second the points
   //var polyURL = "https://docs.google.com/spreadsheets/d/1B0frH_UbekkO4e9sKpwD-GOP_xsXdhouZd_LiMuCwhQ/edit?usp=sharing";
   //var pointsURL = "https://docs.google.com/spreadsheets/d/1pv8BUL8xUzOHSrfJOT_NyuDgJ1WG4Yz0kKjMnHnT6DE/edit?usp=sharing";
-    var pointsURL = "https://docs.google.com/spreadsheets/d/1y5EAUQj8I5h87YXHiRqNsepDiyCrCfLOt1Tw6LDT5UI/edit?usp=sharing";
+    var pointsURL = "https://docs.google.com/spreadsheets/d/1pndzDXH4HXd9-LJoqJAtnukNmfU5Z_MnWTY0v04kBqk/edit?usp=sharing";
 
   //Tabletop.init({ key: polyURL, callback: addPolygons, simpleSheet: true });
   Tabletop.init({ key: pointsURL, callback: addPoints, simpleSheet: true }); // simpleSheet assumes there is only one table and automatically sends its data
