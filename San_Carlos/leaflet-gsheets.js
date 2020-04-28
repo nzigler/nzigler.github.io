@@ -490,16 +490,17 @@ function getRadius(r) {
 legend.onAdd = function (map) {
 
      var div = L.DomUtil.create('div', 'info legend');
-     div.innerHTML = '<b>Project Status</b><br>'+ 
+     div.innerHTML = '<b> Project Status</b><br>'+ 
         '<svg height="100" width="180">' +
-            '<ellipse cx="18" cy="20" rx="10" ry="10" style="stroke-width: 1.2; stroke: black;  fill: red; fill-opacity:0.2;"/>' +
-            '<text x="40" y="25" font-size: 12px;">Active</text>' +
-            '<ellipse cx="18" cy="40" rx="10" ry="10" style="stroke-width: 1.2; stroke: black;  fill: blue; fill-opacity:0.2;"/>' +
-            '<text x="40" y="45" font-size: 12px;">Active</text>' +
-            '<rect x="6" y="40" width="25" height="20" style="stroke-width: 3; stroke: blue; fill: blue; fill-opacity:0.5;"/>' +
-            '<text x="40" y="55" style="font-family: sans-serif; font-size: 12px;">Green Street</text>' +
-            '<rect x="6" y="70" width="25" height="20" style="stroke-width: 3; stroke: yellow; fill: yellow; fill-opacity:0.5;"/>' +
-            '<text x="40" y="85" style="font-family: sans-serif; font-size: 12px;">Regional Project</text>' +
+            '<ellipse cx="18" cy="18" rx="7" ry="7" style="stroke-width: 1.2; stroke: black;  fill: red; fill-opacity:0.8;"/>' +
+            '<text x="40" y="25" font-size: 12px>Active</text>' +
+            '<ellipse cx="18" cy="38" rx="7" ry="7" style="stroke-width: 1.2; stroke: black;  fill: blue; fill-opacity:0.8;"/>' +
+            '<text x="40" y="45" font-size: 12px>Complete</text>' +
+            '<ellipse cx="18" cy="58" rx="7" ry="7" style="stroke-width: 1.2; stroke: black;  fill: yellow; fill-opacity:0.8;"/>' +
+            '<text x="40" y="65" font-size: 12px>Pending</text>' +
+            '<ellipse cx="18" cy="78" rx="7" ry="7" style="stroke-width: 1.2; stroke: black;  fill: gray; fill-opacity:0.8;"/>' +
+            '<text x="40" y="85" font-size: 12px; font-style: italic>blank</text>' +
+            
         '</svg>';
      return div;
  };
