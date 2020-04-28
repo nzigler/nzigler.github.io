@@ -77,7 +77,7 @@ var measureControl = new L.Control.Measure({
 });
 measureControl.addTo(map);
 
-var ctlMouseposition = L.control.mousePosition().addTo(map);
+
 
 document.getElementsByClassName('leaflet-control-measure-toggle')[0].innerHTML = '';
 document.getElementsByClassName('leaflet-control-measure-toggle')[0].className += ' fas fa-ruler';
@@ -273,7 +273,7 @@ function addPoints(data) {
             "<TR><TD><b>Comments from City: </b></TD><TD>" + e.target.feature.properties.Comments_City + "</TD></TR>" +  
             "<TR><TD><b>File Path CSG: </b></TD><TD>" + e.target.feature.properties.File_Path + "</TD></TR>" +             
             "<TR><TD><b>Project Document: </b></TD><TD><a href='docs/" + e.target.feature.properties.Doc1 + "' >" + e.target.feature.properties.Doc1 + "</a></TD></TR>" +
-            "<TR><TD colspan='2'> <a href='photos/" + e.target.feature.properties.Photo1 + "' target='_blank'><img src='photos/" + e.target.feature.properties.Photo1 + "' width='320'></a></TD></TR>" +
+            /*"<TR><TD colspan='2'> <a href='photos/" + e.target.feature.properties.Photo1 + "' target='_blank'><img src='photos/" + e.target.feature.properties.Photo1 + "' width='320'></a></TD></TR>" +*/
            
             "</TABLE>";
           
@@ -402,6 +402,7 @@ abstract.show = function () {
 };
 abstract.addTo(map);
 
+var ctlMouseposition = L.control.mousePosition().addTo(map);
 
 var osmGeocoder = new L.Control.Geocoder({
     collapsed: true,
@@ -438,8 +439,8 @@ baseLayers = {
 };
 
 
-lyrCities = L.geoJSON.ajax('data/SMC_Cities_lines.geojson', {style:{color:'yellow', fillOpacity:0}});// .addTo(mymap);
-lyrParcels = L.geoJSON.ajax('data/SMC_Parcels_San_Carlos_lines_reduced.geojson', {style:{color:'white', fillOpacity:0, weight:1.5}}); //.addTo(mymap);
+lyrCities = L.geoJSON.ajax('data/SMC_Cities_lines.geojson', {style:{color:'yellow', fillOpacity:0}});// .addTo(map);
+lyrParcels = L.geoJSON.ajax('data/SMC_Parcels_San_Carlos_lines_reduced.geojson', {style:{color:'white', fillOpacity:0, weight:1.5}}); //.addTo(map);
 lyrCreeks = L.geoJSON.ajax('data/SMC_Creeks.geojson', {style:{color:'aqua'}});//.addTo(map);
 
 map.on("overlayadd", function (event) {
