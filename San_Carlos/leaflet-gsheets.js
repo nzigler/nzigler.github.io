@@ -505,7 +505,7 @@ legend.onAdd = function (map) {
             '<text x="40" y="55" style="font-family: sans-serif; font-size: 12px;">Green Street</text>' +
             '<rect x="6" y="70" width="25" height="20" style="stroke-width: 3; stroke: yellow; fill: yellow; fill-opacity:0.5;"/>' +
             '<text x="40" y="85" style="font-family: sans-serif; font-size: 12px;">Regional Project</text>' +
-        '</svg>';
+        '</svg>');
        }
      div.innerHTML = labels.join('<br>');
      return div;
