@@ -481,9 +481,21 @@ L.control.layers(baseLayers, overlays, {collapsed : false}).addTo(map);
 }*/
 
 
-
-
-
+var legend = L.control({position: 'topright'});
+legend.onAdd = function (map) {
+    var div = L.DomUtil.create('div', 'info legend');
+    div.innerHTML +=
+   '<b> Project Type: </b><br>'+ 
+        '<svg height="100" width="180">' +
+            '<rect x="6" y="10" width="25" height="20" style="stroke-width: 3; stroke: limegreen;  fill: limegreen; fill-opacity:0.5;"/>' +
+            '<text x="40" y="25" style="font-family: sans-serif; font-size: 12px;">Parcel-based</text>' +
+            '<rect x="6" y="40" width="25" height="20" style="stroke-width: 3; stroke: blue; fill: blue; fill-opacity:0.5;"/>' +
+            '<text x="40" y="55" style="font-family: sans-serif; font-size: 12px;">Green Street</text>' +
+            '<rect x="6" y="70" width="25" height="20" style="stroke-width: 3; stroke: yellow; fill: yellow; fill-opacity:0.5;"/>' +
+            '<text x="40" y="85" style="font-family: sans-serif; font-size: 12px;">Regional Project</text>' +
+        '</svg>';
+    return div;
+}
 
 
 
