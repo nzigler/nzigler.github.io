@@ -243,7 +243,8 @@ function addPoints(data) {
         Comments_CSG: data[row].Comments_CSG,
         Comments_City: data[row].Comments_City,
         File_Path: data[row].File_Path,
-        Photo: data[row].Photo
+        Photo1: data[row].Photo1,
+        Doc1: data[row].Doc1
       }
     };
     marker.on({
