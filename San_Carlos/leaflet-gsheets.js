@@ -492,8 +492,10 @@ legend.onAdd = function (map) {
      var div = L.DomUtil.create('div', 'info legend');
      div.innerHTML = '<b>Project Status</b><br>'+ 
         '<svg height="100" width="180">' +
-            '<ellipse cx="6" cy="10" rx="5" ry="5" style="stroke-width: 2; stroke: black;  fill: red; fill-opacity:0.5;"/>' +
-            '<text x="40" y="25" style="font-family: sans-serif; font-size: 12px;">Active</text>' +
+            '<ellipse cx="18" cy="20" rx="10" ry="10" style="stroke-width: 1.2; stroke: black;  fill: red; fill-opacity:0.2;"/>' +
+            '<text x="40" y="25" font-size: 12px;">Active</text>' +
+            '<ellipse cx="18" cy="40" rx="10" ry="10" style="stroke-width: 1.2; stroke: black;  fill: blue; fill-opacity:0.2;"/>' +
+            '<text x="40" y="45" font-size: 12px;">Active</text>' +
             '<rect x="6" y="40" width="25" height="20" style="stroke-width: 3; stroke: blue; fill: blue; fill-opacity:0.5;"/>' +
             '<text x="40" y="55" style="font-family: sans-serif; font-size: 12px;">Green Street</text>' +
             '<rect x="6" y="70" width="25" height="20" style="stroke-width: 3; stroke: yellow; fill: yellow; fill-opacity:0.5;"/>' +
