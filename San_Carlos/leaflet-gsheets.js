@@ -490,24 +490,15 @@ function getRadius(r) {
 legend.onAdd = function (map) {
 
      var div = L.DomUtil.create('div', 'info legend');
-     grades = [15, 40, 80, 400],
-     labels = ['<strong>Amount of units</strong>'],
-     categories = ['N/A','<50','51-100', '>100'];
-
-     for (var i = 0; i < grades.length; i++) {
-            var grade = grades[i];//*0.5;
-       labels.push(
-            '<b> Project Type: </b><br>'+ 
+     div.innerHTML = '<b>Project Status</b><br>'+ 
         '<svg height="100" width="180">' +
-            '<rect x="6" y="10" width="25" height="20" style="stroke-width: 3; stroke: limegreen;  fill: limegreen; fill-opacity:0.5;"/>' +
-            '<text x="40" y="25" style="font-family: sans-serif; font-size: 12px;">Parcel-based</text>' +
+            '<ellipse cx="6" cy="10" rx="5" ry="5" style="stroke-width: 2; stroke: black;  fill: red; fill-opacity:0.5;"/>' +
+            '<text x="40" y="25" style="font-family: sans-serif; font-size: 12px;">Active</text>' +
             '<rect x="6" y="40" width="25" height="20" style="stroke-width: 3; stroke: blue; fill: blue; fill-opacity:0.5;"/>' +
             '<text x="40" y="55" style="font-family: sans-serif; font-size: 12px;">Green Street</text>' +
             '<rect x="6" y="70" width="25" height="20" style="stroke-width: 3; stroke: yellow; fill: yellow; fill-opacity:0.5;"/>' +
             '<text x="40" y="85" style="font-family: sans-serif; font-size: 12px;">Regional Project</text>' +
         '</svg>');
-       }
-     div.innerHTML = labels.join('<br>');
      return div;
  };
  legend.addTo(map);
