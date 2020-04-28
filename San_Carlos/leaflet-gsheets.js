@@ -77,7 +77,7 @@ var measureControl = new L.Control.Measure({
 });
 measureControl.addTo(map);
 
-var ctlMouseposition = L.control.mousePosition().addTo(mymap);
+var ctlMouseposition = L.control.mousePosition().addTo(map);
 
 document.getElementsByClassName('leaflet-control-measure-toggle')[0].innerHTML = '';
 document.getElementsByClassName('leaflet-control-measure-toggle')[0].className += ' fas fa-ruler';
