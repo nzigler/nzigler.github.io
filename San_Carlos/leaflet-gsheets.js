@@ -263,7 +263,7 @@ function addPoints(data) {
             "<TR><TD><b>Review Type 5: </b></TD><TD>" + e.target.feature.properties.Review_Type5 + "</TD></TR>" +  
             "<TR><TD><b>Review Date: </b></TD><TD>" + e.target.feature.properties.Rev_Date + "</TD></TR>" +  
             "<TR><TD><b>Status: </b></TD><TD>" + e.target.feature.properties.Status + "</TD></TR>" +  
-            "<TR><TD width='150'><b>Regulated Project?: </b></TD><TD>" + e.target.feature.properties.Regulated_Project + "</TD></TR>" +  
+            "<TR><TD><b>Regulated Project?: </b></TD><TD>" + e.target.feature.properties.Regulated_Project + "</TD></TR>" +  
             "<TR><TD><b>Area of Parcel (acres): </b></TD><TD>" + e.target.feature.properties.acres + "</TD></TR>" +  
             "<TR><TD><b>Latitude: </b></TD><TD>" + e.target.feature.properties.lat + "</TD></TR>" +  
             "<TR><TD><b>Longitude: </b></TD><TD>" + e.target.feature.properties.lon + "</TD></TR>" +  
@@ -271,7 +271,7 @@ function addPoints(data) {
             "<TR><TD><b>Comments from City: </b></TD><TD>" + e.target.feature.properties.Comments_City + "</TD></TR>" +  
             "<TR><TD><b>File Path CSG: </b></TD><TD>" + e.target.feature.properties.File_Path + "</TD></TR>" +             
             "<TR><TD><b>Associated Document: </b></TD><TD><a href='docs/" + e.target.feature.properties.Doc1 + "' >" + e.target.feature.properties.Doc1 + "</a></TD></TR>" +
-			"<TR><TD colspan='2'> <a href='photos/" + e.target.feature.properties.Photo1 + "' ><img src='photos/" + e.target.feature.properties.Photo1 + "' width='350'></a></TD></TR>" +
+			"<TR><TD colspan='2'> <a href='photos/" + e.target.feature.properties.Photo1 + "' ><img src='photos/" + e.target.feature.properties.Photo1 + "' width='350' target='_blank'></a></TD></TR>" +
             "</TABLE>";
           
         sidebar.open(panelID);
