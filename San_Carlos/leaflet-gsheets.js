@@ -206,101 +206,103 @@ function addPoints(data) {
   pointGroupLayer = L.layerGroup().addTo(map);
 
   for (var row = 0; row < data.length; row++) {
-    var marker;
-    marker = L.circleMarker([data[row].lat, data[row].lon], style_pts(data[row].Status))
-    marker.addTo(pointGroupLayer);
+     if (data[row].Include == "y") { 
+        var marker;
+        marker = L.circleMarker([data[row].lat, data[row].lon], style_pts(data[row].Status))
+        marker.addTo(pointGroupLayer);
 
-    // UNCOMMENT THIS LINE TO USE POPUPS
-    /*marker.bindPopup('<b>Address: </b>' + data[row].Address + 
-                     '<br><b>Review Type: </b>' + data[row].Review_Type_all +
-                    '<br><b>APN: </b>' + data[row].APN_Real +
-                    '<br><b>Review Date: </b>' + data[row].Rev_Date +
-                    '<br><b>Review Status: </b>' + data[row].Status +
-                    '<br><b>Regulated Project?: </b>' + data[row].Regulated_Project +
-                    '<br><b>Comments (CSG): </b>' + data[row].Comments_CSG +
-                    '<br><b>Comments (City): </b>' + data[row].Comments_City);*/
-    
-    marker.bindTooltip(data[row].Address, {permanent: false, opacity: 0.8});
-    
-      
-    // COMMENT THE NEXT 14 LINES TO DISABLE SIDEBAR FOR THE MARKERS
-    marker.feature = {
-      properties: {
-        APN_Parcel: data[row].APN_Parcel_GIS_Layer,
-        Include: data[row].Include,
-        Address: data[row].Address,
-        APN_Real: data[row].APN_Real_From_Review,
-        Review_Type_all: data[row].Review_Type_all,
-        Review_Type1: data[row].Review_Type1,
-        Review_Type2: data[row].Review_Type2,
-        Review_Type3: data[row].Review_Type3,
-        Review_Type4: data[row].Review_Type4,
-        Review_Type5: data[row].Review_Type5,
-        Rev_Date: data[row].Rev_Date,
-        Status: data[row].Status,
-        Regulated_Project: data[row].Regulated_Project,
-        acres: data[row].acres,
-        lat: data[row].lat,
-        lon: data[row].lon,
-        Comments_CSG: data[row].Comments_CSG,
-        Comments_City: data[row].Comments_City,
-        File_Path: data[row].File_Path,
-        Photo1: data[row].Photo1,
-        Doc1: data[row].Doc1
-      }
-    };
-    marker.on({
-      click: function(e) {
-        L.DomEvent.stopPropagation(e);
-        document.getElementById("sidebar-title").innerHTML = e.target.feature.properties.Address;
-        document.getElementById("sidebar-content").innerHTML = "<TABLE>" +          
-            "<TR><TD><b>Include Project on Map?: </b></TD><TD>" + e.target.feature.properties.Include + "</TD></TR>" +  
-            "<TR><TD><b>Address: </b></TD><TD>" + e.target.feature.properties.Address + "</TD></TR>" +  
-            "<TR><TD><b>APN from Parcel GIS Layer: </b></TD><TD>" + e.target.feature.properties.APN_Parcel + "</TD></TR>" +  
-            "<TR><TD><b>APN in Review Data: </b></TD><TD>" + e.target.feature.properties.APN_Real + "</TD></TR>" +  
-            "<TR><TD><b>Review Type 1: </b></TD><TD>" + e.target.feature.properties.Review_Type1 + "</TD></TR>" +  
-            "<TR><TD><b>Review Type 2: </b></TD><TD>" + e.target.feature.properties.Review_Type2 + "</TD></TR>" +  
-            "<TR><TD><b>Review Type 3: </b></TD><TD>" + e.target.feature.properties.Review_Type3 + "</TD></TR>" +  
-            "<TR><TD><b>Review Type 4: </b></TD><TD>" + e.target.feature.properties.Review_Type4 + "</TD></TR>" +  
-            "<TR><TD><b>Review Type 5: </b></TD><TD>" + e.target.feature.properties.Review_Type5 + "</TD></TR>" +  
-            "<TR><TD><b>Review Date: </b></TD><TD>" + e.target.feature.properties.Rev_Date + "</TD></TR>" +  
-            "<TR><TD><b>Status: </b></TD><TD>" + e.target.feature.properties.Status + "</TD></TR>" +  
-            "<TR><TD><b>Regulated Project?: </b></TD><TD>" + e.target.feature.properties.Regulated_Project + "</TD></TR>" +  
-            "<TR><TD><b>Area of Parcel (acres): </b></TD><TD>" + e.target.feature.properties.acres + "</TD></TR>" +  
-            "<TR><TD><b>Latitude: </b></TD><TD>" + e.target.feature.properties.lat + "</TD></TR>" +  
-            "<TR><TD><b>Longitude: </b></TD><TD>" + e.target.feature.properties.lon + "</TD></TR>" +  
-            "<TR><TD><b>Comments from CSG: </b></TD><TD>" + e.target.feature.properties.Comments_CSG + "</TD></TR>" +  
-            "<TR><TD><b>Comments from City: </b></TD><TD>" + e.target.feature.properties.Comments_City + "</TD></TR>" +  
-            "<TR><TD><b>File Path CSG: </b></TD><TD>" + e.target.feature.properties.File_Path + "</TD></TR>" +             
-            "<TR><TD><b>Project Document: </b></TD><TD><a href='docs/" + e.target.feature.properties.Doc1 + "' >" + e.target.feature.properties.Doc1 + "</a></TD></TR>" +
-            /*"<TR><TD colspan='2'> <a href='photos/" + e.target.feature.properties.Photo1 + "' target='_blank'><img src='photos/" + e.target.feature.properties.Photo1 + "' width='320'></a></TD></TR>" +*/
-           
-            "</TABLE>";
-          
-             /*if (e.target.feature.properties.Photo1) {
-                document.getElementById("sidebar-content").innerHTML += "<TR><TD colspan='2'> <a href='photos/" + e.target.feature.properties.Photo1 + "' target='_blank'><img src='photos/" + e.target.feature.properties.Photo1 + "' width='320'></a></TD></TR>"; 
-            }*/
-          
-          
-        sidebar.open(panelID);
-      }
-    });
-    /*marker.on({
-        mouseout: style_pts(data[row].Status),
-        mouseover: highlightFeature,
-    });*/
+        // UNCOMMENT THIS LINE TO USE POPUPS
+        /*marker.bindPopup('<b>Address: </b>' + data[row].Address + 
+                         '<br><b>Review Type: </b>' + data[row].Review_Type_all +
+                        '<br><b>APN: </b>' + data[row].APN_Real +
+                        '<br><b>Review Date: </b>' + data[row].Rev_Date +
+                        '<br><b>Review Status: </b>' + data[row].Status +
+                        '<br><b>Regulated Project?: </b>' + data[row].Regulated_Project +
+                        '<br><b>Comments (CSG): </b>' + data[row].Comments_CSG +
+                        '<br><b>Comments (City): </b>' + data[row].Comments_City);*/
 
-    // AwesomeMarkers is used to create fancier icons
-    /*var icon = L.AwesomeMarkers.icon({
-      icon: "info-sign",
-      iconColor: "white",
-      markerColor: getColor(data[row].Status),
-      prefix: "glyphicon",
-      extraClasses: "fa-rotate-0"
-    });
-    if (!markerType.includes("circle")) {
-      marker.setIcon(icon);
-    }*/
+        marker.bindTooltip(data[row].Address, {permanent: false, opacity: 0.8});
+
+
+        // COMMENT THE NEXT 14 LINES TO DISABLE SIDEBAR FOR THE MARKERS
+        marker.feature = {
+          properties: {
+            APN_Parcel: data[row].APN_Parcel_GIS_Layer,
+            Include: data[row].Include,
+            Address: data[row].Address,
+            APN_Real: data[row].APN_Real_From_Review,
+            Review_Type_all: data[row].Review_Type_all,
+            Review_Type1: data[row].Review_Type1,
+            Review_Type2: data[row].Review_Type2,
+            Review_Type3: data[row].Review_Type3,
+            Review_Type4: data[row].Review_Type4,
+            Review_Type5: data[row].Review_Type5,
+            Rev_Date: data[row].Rev_Date,
+            Status: data[row].Status,
+            Regulated_Project: data[row].Regulated_Project,
+            acres: data[row].acres,
+            lat: data[row].lat,
+            lon: data[row].lon,
+            Comments_CSG: data[row].Comments_CSG,
+            Comments_City: data[row].Comments_City,
+            File_Path: data[row].File_Path,
+            Photo1: data[row].Photo1,
+            Doc1: data[row].Doc1
+          }
+        };
+        marker.on({
+          click: function(e) {
+            L.DomEvent.stopPropagation(e);
+            document.getElementById("sidebar-title").innerHTML = e.target.feature.properties.Address;
+            document.getElementById("sidebar-content").innerHTML = "<TABLE>" +          
+                "<TR><TD><b>Include Project on Map?: </b></TD><TD>" + e.target.feature.properties.Include + "</TD></TR>" +  
+                "<TR><TD><b>Address: </b></TD><TD>" + e.target.feature.properties.Address + "</TD></TR>" +  
+                "<TR><TD><b>APN from Parcel GIS Layer: </b></TD><TD>" + e.target.feature.properties.APN_Parcel + "</TD></TR>" +  
+                "<TR><TD><b>APN in Review Data: </b></TD><TD>" + e.target.feature.properties.APN_Real + "</TD></TR>" +  
+                "<TR><TD><b>Review Type 1: </b></TD><TD>" + e.target.feature.properties.Review_Type1 + "</TD></TR>" +  
+                "<TR><TD><b>Review Type 2: </b></TD><TD>" + e.target.feature.properties.Review_Type2 + "</TD></TR>" +  
+                "<TR><TD><b>Review Type 3: </b></TD><TD>" + e.target.feature.properties.Review_Type3 + "</TD></TR>" +  
+                "<TR><TD><b>Review Type 4: </b></TD><TD>" + e.target.feature.properties.Review_Type4 + "</TD></TR>" +  
+                "<TR><TD><b>Review Type 5: </b></TD><TD>" + e.target.feature.properties.Review_Type5 + "</TD></TR>" +  
+                "<TR><TD><b>Review Date: </b></TD><TD>" + e.target.feature.properties.Rev_Date + "</TD></TR>" +  
+                "<TR><TD><b>Status: </b></TD><TD>" + e.target.feature.properties.Status + "</TD></TR>" +  
+                "<TR><TD><b>Regulated Project?: </b></TD><TD>" + e.target.feature.properties.Regulated_Project + "</TD></TR>" +  
+                "<TR><TD><b>Area of Parcel (acres): </b></TD><TD>" + e.target.feature.properties.acres + "</TD></TR>" +  
+                "<TR><TD><b>Latitude: </b></TD><TD>" + e.target.feature.properties.lat + "</TD></TR>" +  
+                "<TR><TD><b>Longitude: </b></TD><TD>" + e.target.feature.properties.lon + "</TD></TR>" +  
+                "<TR><TD><b>Comments from CSG: </b></TD><TD>" + e.target.feature.properties.Comments_CSG + "</TD></TR>" +  
+                "<TR><TD><b>Comments from City: </b></TD><TD>" + e.target.feature.properties.Comments_City + "</TD></TR>" +  
+                "<TR><TD><b>File Path CSG: </b></TD><TD>" + e.target.feature.properties.File_Path + "</TD></TR>" +             
+                "<TR><TD><b>Project Document: </b></TD><TD><a href='docs/" + e.target.feature.properties.Doc1 + "' >" + e.target.feature.properties.Doc1 + "</a></TD></TR>" +
+                /*"<TR><TD colspan='2'> <a href='photos/" + e.target.feature.properties.Photo1 + "' target='_blank'><img src='photos/" + e.target.feature.properties.Photo1 + "' width='320'></a></TD></TR>" +*/
+
+                "</TABLE>";
+
+                 /*if (e.target.feature.properties.Photo1) {
+                    document.getElementById("sidebar-content").innerHTML += "<TR><TD colspan='2'> <a href='photos/" + e.target.feature.properties.Photo1 + "' target='_blank'><img src='photos/" + e.target.feature.properties.Photo1 + "' width='320'></a></TD></TR>"; 
+                }*/
+
+
+            sidebar.open(panelID);
+          }
+        });
+        /*marker.on({
+            mouseout: style_pts(data[row].Status),
+            mouseover: highlightFeature,
+        });*/
+
+        // AwesomeMarkers is used to create fancier icons
+        /*var icon = L.AwesomeMarkers.icon({
+          icon: "info-sign",
+          iconColor: "white",
+          markerColor: getColor(data[row].Status),
+          prefix: "glyphicon",
+          extraClasses: "fa-rotate-0"
+        });
+        if (!markerType.includes("circle")) {
+          marker.setIcon(icon);
+        }*/
+     }
   }
 }
 
