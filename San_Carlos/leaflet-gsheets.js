@@ -459,30 +459,31 @@ L.control.layers(baseLayers, overlays, {collapsed : false}).addTo(map);
 
 
 
-function addLegend(scale, scaleType, title) {
-    var svg = d3.select("#legend")
-      .append("svg")
-        .style("width", 300)
-        .style("height", 300);
-
-    svg.append("g")
-        .attr("class", "legend")
-        .attr("transform", "translate(20,20)");
-
-    var legend = d3.legendColor()
-      .labelFormat(d3.format(".2f"))
-      .title(title);
-
-    if (scaleType === "scaleThreshold") {
-      legend = legend.labels(d3.legendHelpers.thresholdLabels);
-    }
-
-    legend.scale(scale);  
-
-    svg.select("g.legend")
-      .call(legend);
+ function getRadius(r) {
+return  r > 100 ? 12 :
+        r > 50 ? 9 :
+        r > 20 ? 6 :
+        r > 10 ? 4 :
+        0;
 }
 
+ var legend = L.control({position: 'bottomright'});
+ legend.onAdd = function (map) {
+
+ var div = L.DomUtil.create('div', 'info legend');
+ grades = [15, 40, 80, 400],
+ labels = ['<strong>Amount of units</strong>'],
+ categories = ['N/A','<50','51-100', '>100'];
+
+ for (var i = 0; i < grades.length; i++) {
+        var grade = grades[i];//*0.5;
+   labels.push(
+        '<i class="circlepadding" style="width: '+Math.max(8,(7-2.2*getRadius(grade)))+'px;"></i> <i style="background: #8080A0; width: '+getRadius(grade)*2+'px; height: '+getRadius(grade)*2+'px; border-radius: 50%; margin-top: '+Math.max(0,(9-getRadius(grade)))+'px;"></i><i class="circlepadding" style="width: '+Math.max(2,(25-2*getRadius(grade)))+'px;"></i> ' + categories[i]);
+   }
+ div.innerHTML = labels.join('<br>');
+ return div;
+ };
+ legend.addTo(map);
 
 /*var legend = L.control({position: 'topright'});
 legend.onAdd = function (map) {
