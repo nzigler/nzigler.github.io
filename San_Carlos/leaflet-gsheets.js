@@ -313,14 +313,14 @@ function style_pts(status) {
             return {
         radius: 8.0,
         opacity: 1,
-        color: 'rgba(128,17,25,1.0)',
+        color: 'rgba(20,20,20,0.8)',
         dashArray: '',
         lineCap: 'butt',
         lineJoin: 'miter',
-        weight: 2.0,
+        weight: 1.4,
         fill: true,
         fillOpacity: 1,
-        fillColor: 'rgba(219,30,42,1.0)',
+        fillColor: 'rgba(219,0,0,0.7)',
         interactive: true,
     }
             break;
@@ -328,14 +328,14 @@ function style_pts(status) {
             return {
         radius: 8.0,
         opacity: 1,
-        color: 'rgba(0,0,0,1.0)',
+        color: 'rgba(20,20,20,0.8)',
         dashArray: '',
         lineCap: 'butt',
         lineJoin: 'miter',
-        weight: 2.0,
+        weight: 1.4,
         fill: true,
         fillOpacity: 1,
-        fillColor: 'rgba(30,153,219,1.0)',
+        fillColor: 'rgba(0,0,255,0.8)',
         interactive: true,
     }
             break;
@@ -343,14 +343,14 @@ function style_pts(status) {
             return {
         radius: 8.0,
         opacity: 1,
-        color: 'rgba(0,0,0,1.0)',
+        color: 'rgba(20,20,20,0.8)',
         dashArray: '',
         lineCap: 'butt',
         lineJoin: 'miter',
-        weight: 2.0,
+        weight: 1.4,
         fill: true,
         fillOpacity: 1,
-        fillColor: 'rgba(215,219,101,1.0)',
+        fillColor: 'rgba(255,255,0,0.8)',
         interactive: true,
     }
             break;
@@ -358,11 +358,11 @@ function style_pts(status) {
             return {
         radius: 8.0,
         opacity: 1,
-        color: 'rgba(0,0,0,1.0)',
+        color: 'rgba(20,20,20,0.8)',
         dashArray: '',
         lineCap: 'butt',
         lineJoin: 'miter',
-        weight: 2.0,
+        weight: 1.4,
         fill: true,
         fillOpacity: 1,
         fillColor: 'rgba(148,148,148,1.0)',
@@ -377,7 +377,7 @@ function style_pts(status) {
         dashArray: '',
         lineCap: 'butt',
         lineJoin: 'miter',
-        weight: 2.0,
+        weight: 1.4,
         fill: true,
         fillOpacity: 1,
         fillColor: 'rgba(200,200,200,1.0)',
@@ -491,15 +491,15 @@ legend.onAdd = function (map) {
 
      var div = L.DomUtil.create('div', 'info legend');
      div.innerHTML = '<b> Project Status</b><br>'+ 
-        '<svg height="100" width="180">' +
+        '<svg height="90" width="120">' +
             '<ellipse cx="18" cy="18" rx="7" ry="7" style="stroke-width: 1.2; stroke: black;  fill: red; fill-opacity:0.8;"/>' +
-            '<text x="40" y="25" font-size: 12px>Active</text>' +
+            '<text x="40" y="20" font-size: 12px>Active</text>' +
             '<ellipse cx="18" cy="38" rx="7" ry="7" style="stroke-width: 1.2; stroke: black;  fill: blue; fill-opacity:0.8;"/>' +
-            '<text x="40" y="45" font-size: 12px>Complete</text>' +
+            '<text x="40" y="40" font-size: 12px>Complete</text>' +
             '<ellipse cx="18" cy="58" rx="7" ry="7" style="stroke-width: 1.2; stroke: black;  fill: yellow; fill-opacity:0.8;"/>' +
-            '<text x="40" y="65" font-size: 12px>Pending</text>' +
+            '<text x="40" y="60" font-size: 12px>Pending</text>' +
             '<ellipse cx="18" cy="78" rx="7" ry="7" style="stroke-width: 1.2; stroke: black;  fill: gray; fill-opacity:0.8;"/>' +
-            '<text x="40" y="85" font-size: 12px; font-style: italic>blank</text>' +
+            '<text x="40" y="80" font-size: 12px>blank</text>' +
             
         '</svg>';
      return div;
