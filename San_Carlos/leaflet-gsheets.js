@@ -402,7 +402,7 @@ abstract.show = function () {
 };
 abstract.addTo(map);
 
-var ctlMouseposition = L.control.mousePosition().addTo(map);
+var ctlMouseposition = L.control.mousePosition({position: 'bottomleft'}).addTo(map);
 
 var osmGeocoder = new L.Control.Geocoder({
     collapsed: true,
