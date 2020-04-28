@@ -428,26 +428,10 @@ baseLayers = {
 };
 
 
-lyrCities = L.geoJSON.ajax('data/SMC_Cities.geojson', {style:{color:'gray', fillOpacity:0}});// .addTo(mymap);
-lyrParcels = L.geoJSON.ajax('data/SMC_Parcels_San_Carlos.geojson', {style:{color:'black', fillOpacity:0}}); //.addTo(mymap);
-lyrWatersheds = L.geoJSON.ajax('data/SMC_watersheds.geojson', {style:{color:'deepskyblue'}}); //.addTo(mymap);
-lyrCreeks = L.geoJSON.ajax('data/SMC_Creeks.geojson', {style:{color:'steelblue'}}).addTo(map);
-
-
-    
-
-function popUp(f,l){
-    var out = [];
-    if (f.properties){
-        for(key in f.properties){
-            out.push(key+": "+f.properties[key]);
-        }
-        l.bindPopup(out.join("<br />"));
-    }
-}
-
-
-var jsonTest = new L.GeoJSON.AJAX(["data/SMC_Creeks.geojson","data/SMC_watersheds.geojson"],{onEachFeature:popUp}).addTo(map);
+lyrCities = L.geoJSON.ajax('data/SMC_Cities.geojson', {style:{color:'yellow', fillOpacity:0}});// .addTo(mymap);
+lyrParcels = L.geoJSON.ajax('data/SMC_Parcels_San_Carlos.geojson', {style:{color:'white', fillOpacity:0, weight:1.5}}); //.addTo(mymap);
+lyrWatersheds = L.geoJSON.ajax('data/SMC_watersheds.geojson', {style:{color:'deepskyblue', fillOpacity:0}}); //.addTo(mymap);
+lyrCreeks = L.geoJSON.ajax('data/SMC_Creeks.geojson', {style:{color:'aqua'}}).addTo(map);
 
 overlays = {
     "City Boundaries":lyrCities,
