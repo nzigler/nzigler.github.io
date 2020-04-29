@@ -230,19 +230,19 @@ function addPoints(data) {
             APN_Parcel: data[row].APN_Parcel_GIS_Layer,
             Include: data[row].Include,
             Address: data[row].Address,
-            APN_Real: data[row].APN_Real_From_Review,
+            APN_Real: data[row].APN_From_Review,
             Review_Type_all: data[row].Review_Type_all,
             Review_Type1: data[row].Review_Type1,
             Review_Type2: data[row].Review_Type2,
             Review_Type3: data[row].Review_Type3,
             Review_Type4: data[row].Review_Type4,
             Review_Type5: data[row].Review_Type5,
-            Rev_Date: data[row].Rev_Date,
+            Review_Date: data[row].Review_Date,
             Status: data[row].Status,
             Regulated_Project: data[row].Regulated_Project,
-            acres: data[row].acres,
-            lat: data[row].lat,
-            lon: data[row].lon,
+            Project_area: data[row].Project_area,
+            Latitude: data[row].Latitude,
+            Longitude: data[row].Longitude,
             Comments_CSG: data[row].Comments_CSG,
             Comments_City: data[row].Comments_City,
             File_Path: data[row].File_Path,
@@ -258,22 +258,23 @@ function addPoints(data) {
                 "<TR><TD><b>Include Project on Map?a: </b></TD><TD>" + e.target.feature.properties.Include + "</TD></TR>" +  
                 "<TR><TD><b>Address: </b></TD><TD>" + e.target.feature.properties.Address + "</TD></TR>" +  
                 "<TR><TD><b>APN from Parcel GIS Layer: </b></TD><TD>" + e.target.feature.properties.APN_Parcel + "</TD></TR>" +  
-                "<TR><TD><b>APN in Review Data: </b></TD><TD>" + e.target.feature.properties.APN_Real + "</TD></TR>" +  
+                "<TR><TD><b>APN in Review Data: </b></TD><TD>" + e.target.feature.properties.APN_From_Review + "</TD></TR>" +  
                 "<TR><TD><b>Review Type 1: </b></TD><TD>" + e.target.feature.properties.Review_Type1 + "</TD></TR>" +  
                 "<TR><TD><b>Review Type 2: </b></TD><TD>" + e.target.feature.properties.Review_Type2 + "</TD></TR>" +  
                 "<TR><TD><b>Review Type 3: </b></TD><TD>" + e.target.feature.properties.Review_Type3 + "</TD></TR>" +  
                 "<TR><TD><b>Review Type 4: </b></TD><TD>" + e.target.feature.properties.Review_Type4 + "</TD></TR>" +  
                 "<TR><TD><b>Review Type 5: </b></TD><TD>" + e.target.feature.properties.Review_Type5 + "</TD></TR>" +  
-                "<TR><TD><b>Review Date: </b></TD><TD>" + e.target.feature.properties.Rev_Date + "</TD></TR>" +  
+                "<TR><TD><b>Review Date: </b></TD><TD>" + e.target.feature.properties.Review_Date + "</TD></TR>" +  
                 "<TR><TD><b>Status: </b></TD><TD>" + e.target.feature.properties.Status + "</TD></TR>" +  
                 "<TR><TD><b>Regulated Project?: </b></TD><TD>" + e.target.feature.properties.Regulated_Project + "</TD></TR>" +  
-                "<TR><TD><b>Area of Parcel (acres): </b></TD><TD>" + e.target.feature.properties.acres + "</TD></TR>" +  
-                "<TR><TD><b>Latitude: </b></TD><TD>" + e.target.feature.properties.lat + "</TD></TR>" +  
-                "<TR><TD><b>Longitude: </b></TD><TD>" + e.target.feature.properties.lon + "</TD></TR>" +  
+                "<TR><TD><b>Area of Project: </b></TD><TD>" + e.target.feature.properties.Project_area + "</TD></TR>" +  
+                "<TR><TD><b>Latitude: </b></TD><TD>" + e.target.feature.properties.Latitude + "</TD></TR>" +  
+                "<TR><TD><b>Longitude: </b></TD><TD>" + e.target.feature.properties.Longitude + "</TD></TR>" +  
                 "<TR><TD><b>Comments from CSG: </b></TD><TD>" + e.target.feature.properties.Comments_CSG + "</TD></TR>" +  
                 "<TR><TD><b>Comments from City: </b></TD><TD>" + e.target.feature.properties.Comments_City + "</TD></TR>" +  
                 "<TR><TD><b>File Path CSG: </b></TD><TD>" + e.target.feature.properties.File_Path + "</TD></TR>" +             
                 "<TR><TD><b>Project Document: </b></TD><TD><a href='docs/" + e.target.feature.properties.Doc1 + "' >" + e.target.feature.properties.Doc1 + "</a></TD></TR>" +
+                "<TR><TD><b>Project Document: </b></TD><TD><a href='photos/" + e.target.feature.properties.Photo1 + "' >" + e.target.feature.properties.Photo1 + "</a></TD></TR>" +
                 /*"<TR><TD colspan='2'> <a href='photos/" + e.target.feature.properties.Photo1 + "' target='_blank'><img src='photos/" + e.target.feature.properties.Photo1 + "' width='320'></a></TD></TR>" +*/
 
                 "</TABLE>";
