@@ -208,7 +208,7 @@ function addPoints(data) {
   for (var row = 0; row < data.length; row++) {
      if (data[row].Include == "Yes") { 
         var marker;
-        marker = L.circleMarker([data[row].lat, data[row].lon], style_pts(data[row].Status))
+        marker = L.circleMarker([data[row].Latitude, data[row].Longitude], style_pts(data[row].Status))
         marker.addTo(pointGroupLayer);
 
         // UNCOMMENT THIS LINE TO USE POPUPS
@@ -255,7 +255,7 @@ function addPoints(data) {
             L.DomEvent.stopPropagation(e);
             document.getElementById("sidebar-title").innerHTML = e.target.feature.properties.Address;
             document.getElementById("sidebar-content").innerHTML = "<TABLE>" +          
-                "<TR><TD><b>Include Project on Map?: </b></TD><TD>" + e.target.feature.properties.Include + "</TD></TR>" +  
+                "<TR><TD><b>Include Project on Map?a: </b></TD><TD>" + e.target.feature.properties.Include + "</TD></TR>" +  
                 "<TR><TD><b>Address: </b></TD><TD>" + e.target.feature.properties.Address + "</TD></TR>" +  
                 "<TR><TD><b>APN from Parcel GIS Layer: </b></TD><TD>" + e.target.feature.properties.APN_Parcel + "</TD></TR>" +  
                 "<TR><TD><b>APN in Review Data: </b></TD><TD>" + e.target.feature.properties.APN_Real + "</TD></TR>" +  
@@ -314,45 +314,39 @@ function style_pts(status) {
         case 'ACTIVE':
             return {
         radius: 8.0,
-        opacity: 1,
-        color: 'rgba(20,20,20,0.8)',
-        dashArray: '',
-        lineCap: 'butt',
-        lineJoin: 'miter',
+        opacity: 0.7,
+        color: 'rgb(20,20,20)',
         weight: 1.4,
-        fill: true,
-        fillOpacity: 1,
-        fillColor: 'rgba(219,0,0,0.7)',
-        interactive: true,
+        fillOpacity: 0.7,
+        fillColor: 'rgb(219,0,0)'
     }
             break;
         case 'COMPLETE':
             return {
         radius: 8.0,
         opacity: 1,
-        color: 'rgba(20,20,20,0.8)',
+        color: 'rgb(20,20,20,0.8)',
         dashArray: '',
         lineCap: 'butt',
         lineJoin: 'miter',
         weight: 1.4,
         fill: true,
-        fillOpacity: 1,
-        fillColor: 'rgba(0,0,255,0.8)',
-        interactive: true,
+        fillOpacity: 0.7,
+        fillColor: 'rgb(0,0,255)'
     }
             break;
         case 'PENDING':
             return {
         radius: 8.0,
         opacity: 1,
-        color: 'rgba(20,20,20,0.8)',
+        color: 'rgb(20,20,20,0.8)',
         dashArray: '',
         lineCap: 'butt',
         lineJoin: 'miter',
         weight: 1.4,
         fill: true,
         fillOpacity: 1,
-        fillColor: 'rgba(255,255,0,0.8)',
+        fillColor: 'rgb(255,255,0)',
         interactive: true,
     }
             break;
@@ -360,14 +354,14 @@ function style_pts(status) {
             return {
         radius: 8.0,
         opacity: 1,
-        color: 'rgba(20,20,20,0.8)',
+        color: 'rgb(20,20,20,0.8)',
         dashArray: '',
         lineCap: 'butt',
         lineJoin: 'miter',
         weight: 1.4,
         fill: true,
         fillOpacity: 1,
-        fillColor: 'rgba(148,148,148,1.0)',
+        fillColor: 'rgb(148,148,148)',
         interactive: true,
     }
             break;
@@ -375,14 +369,14 @@ function style_pts(status) {
             return {
         radius: 8.0,
         opacity: 1,
-        color: 'rgba(0,0,0,1.0)',
+        color: 'rgb(0,0,0)',
         dashArray: '',
         lineCap: 'butt',
         lineJoin: 'miter',
         weight: 1.4,
         fill: true,
         fillOpacity: 1,
-        fillColor: 'rgba(200,200,200,1.0)',
+        fillColor: 'rgb(200,200,200)',
         interactive: true,
     }
             break;
