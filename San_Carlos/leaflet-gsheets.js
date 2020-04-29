@@ -230,7 +230,7 @@ function addPoints(data) {
             APN_Parcel_GIS_Layer: data[row].APN_Parcel_GIS_Layer,
             Include: data[row].Include,
             Address: data[row].Address,
-            APN_Real: data[row].APN_From_Review,
+            APN_From_Review: data[row].APN_From_Review,
             Review_Type1: data[row].Review_Type1,
             Review_Type2: data[row].Review_Type2,
             Review_Type3: data[row].Review_Type3,
