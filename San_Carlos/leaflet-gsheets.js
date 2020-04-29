@@ -206,7 +206,7 @@ function addPoints(data) {
   pointGroupLayer = L.layerGroup().addTo(map);
 
   for (var row = 0; row < data.length; row++) {
-     if (data[row].Include == "y") { 
+     if (data[row].Include == "Yes") { 
         var marker;
         marker = L.circleMarker([data[row].lat, data[row].lon], style_pts(data[row].Status))
         marker.addTo(pointGroupLayer);
