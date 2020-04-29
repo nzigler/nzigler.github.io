@@ -227,7 +227,7 @@ function addPoints(data) {
         // COMMENT THE NEXT 14 LINES TO DISABLE SIDEBAR FOR THE MARKERS
         marker.feature = {
           properties: {
-            APN_Parcel: data[row].APN_Parcel_GIS_Layer,
+            APN_Parcel_GIS_Layer: data[row].APN_Parcel_GIS_Layer,
             Include: data[row].Include,
             Address: data[row].Address,
             APN_Real: data[row].APN_From_Review,
@@ -258,7 +258,7 @@ function addPoints(data) {
             document.getElementById("sidebar-content").innerHTML = "<TABLE>" +          
                 "<TR><TD><b>Include Project on Map?: </b></TD><TD>" + e.target.feature.properties.Include + "</TD></TR>" +  
                 "<TR><TD><b>Address: </b></TD><TD>" + e.target.feature.properties.Address + "</TD></TR>" +  
-                "<TR><TD><b>APN from Parcel GIS Layer: </b></TD><TD>" + e.target.feature.properties.APN_Parcel + "</TD></TR>" +  
+                "<TR><TD><b>APN from Parcel GIS Layer: </b></TD><TD>" + e.target.feature.properties.APN_Parcel_GIS_Layer + "</TD></TR>" +  
                 "<TR><TD><b>APN in Review Data: </b></TD><TD>" + e.target.feature.properties.APN_From_Review + "</TD></TR>" +  
                 "<TR><TD><b>Review Type 1: </b></TD><TD>" + e.target.feature.properties.Review_Type1 + "</TD></TR>" +  
                 "<TR><TD><b>Review Type 2: </b></TD><TD>" + e.target.feature.properties.Review_Type2 + "</TD></TR>" +  
