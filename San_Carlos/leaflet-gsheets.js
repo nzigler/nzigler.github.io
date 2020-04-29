@@ -324,13 +324,9 @@ function style_pts(status) {
         case 'COMPLETE':
             return {
         radius: 8.0,
-        opacity: 1,
-        color: 'rgb(20,20,20,0.8)',
-        dashArray: '',
-        lineCap: 'butt',
-        lineJoin: 'miter',
+        opacity: 0.7,
+        color: 'rgb(20,20,20)',
         weight: 1.4,
-        fill: true,
         fillOpacity: 0.7,
         fillColor: 'rgb(0,0,255)'
     }
@@ -338,46 +334,31 @@ function style_pts(status) {
         case 'PENDING':
             return {
         radius: 8.0,
-        opacity: 1,
-        color: 'rgb(20,20,20,0.8)',
-        dashArray: '',
-        lineCap: 'butt',
-        lineJoin: 'miter',
+        opacity: 0.7,
+        color: 'rgb(20,20,20)',
         weight: 1.4,
-        fill: true,
-        fillOpacity: 1,
-        fillColor: 'rgb(255,255,0)',
-        interactive: true,
+        fillOpacity: 0.7,
+        fillColor: 'rgb(255,255,0)'
     }
             break;
         case '':
             return {
         radius: 8.0,
-        opacity: 1,
-        color: 'rgb(20,20,20,0.8)',
-        dashArray: '',
-        lineCap: 'butt',
-        lineJoin: 'miter',
+        opacity: 0.7,
+        color: 'rgb(20,20,20)',
         weight: 1.4,
-        fill: true,
-        fillOpacity: 1,
-        fillColor: 'rgb(148,148,148)',
-        interactive: true,
+        fillOpacity: 0.7,
+        fillColor: 'rgb(148,148,148)'
     }
             break;
         default: 
             return {
         radius: 8.0,
-        opacity: 1,
-        color: 'rgb(0,0,0)',
-        dashArray: '',
-        lineCap: 'butt',
-        lineJoin: 'miter',
+        opacity: 0.7,
+        color: 'rgb(20,20,20)',
         weight: 1.4,
-        fill: true,
-        fillOpacity: 1,
-        fillColor: 'rgb(200,200,200)',
-        interactive: true,
+        fillOpacity: 0.7,
+        fillColor: 'rgb(200,200,200)'
     }
             break;
     }
