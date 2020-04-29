@@ -231,7 +231,6 @@ function addPoints(data) {
             Include: data[row].Include,
             Address: data[row].Address,
             APN_Real: data[row].APN_From_Review,
-            Review_Type_all: data[row].Review_Type_all,
             Review_Type1: data[row].Review_Type1,
             Review_Type2: data[row].Review_Type2,
             Review_Type3: data[row].Review_Type3,
