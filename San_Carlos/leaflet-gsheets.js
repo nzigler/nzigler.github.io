@@ -243,6 +243,7 @@ function addPoints(data) {
             Project_area: data[row].Project_area,
             Latitude: data[row].Latitude,
             Longitude: data[row].Longitude,
+            Description: data[row].Project_Description,
             Comments_CSG: data[row].Comments_CSG,
             Comments_City: data[row].Comments_City,
             File_Path: data[row].File_Path,
@@ -255,7 +256,7 @@ function addPoints(data) {
             L.DomEvent.stopPropagation(e);
             document.getElementById("sidebar-title").innerHTML = e.target.feature.properties.Address;
             document.getElementById("sidebar-content").innerHTML = "<TABLE>" +          
-                "<TR><TD><b>Include Project on Map?a: </b></TD><TD>" + e.target.feature.properties.Include + "</TD></TR>" +  
+                "<TR><TD><b>Include Project on Map?: </b></TD><TD>" + e.target.feature.properties.Include + "</TD></TR>" +  
                 "<TR><TD><b>Address: </b></TD><TD>" + e.target.feature.properties.Address + "</TD></TR>" +  
                 "<TR><TD><b>APN from Parcel GIS Layer: </b></TD><TD>" + e.target.feature.properties.APN_Parcel + "</TD></TR>" +  
                 "<TR><TD><b>APN in Review Data: </b></TD><TD>" + e.target.feature.properties.APN_From_Review + "</TD></TR>" +  
@@ -269,12 +270,13 @@ function addPoints(data) {
                 "<TR><TD><b>Regulated Project?: </b></TD><TD>" + e.target.feature.properties.Regulated_Project + "</TD></TR>" +  
                 "<TR><TD><b>Area of Project: </b></TD><TD>" + e.target.feature.properties.Project_area + "</TD></TR>" +  
                 "<TR><TD><b>Latitude: </b></TD><TD>" + e.target.feature.properties.Latitude + "</TD></TR>" +  
+                "<TR><TD><b>Project Description: </b></TD><TD>" + e.target.feature.properties.Description + "</TD></TR>" + 
                 "<TR><TD><b>Longitude: </b></TD><TD>" + e.target.feature.properties.Longitude + "</TD></TR>" +  
                 "<TR><TD><b>Comments from CSG: </b></TD><TD>" + e.target.feature.properties.Comments_CSG + "</TD></TR>" +  
                 "<TR><TD><b>Comments from City: </b></TD><TD>" + e.target.feature.properties.Comments_City + "</TD></TR>" +  
                 "<TR><TD><b>File Path CSG: </b></TD><TD>" + e.target.feature.properties.File_Path + "</TD></TR>" +             
                 "<TR><TD><b>Project Document: </b></TD><TD><a href='docs/" + e.target.feature.properties.Doc1 + "' >" + e.target.feature.properties.Doc1 + "</a></TD></TR>" +
-                "<TR><TD><b>Project Document: </b></TD><TD><a href='photos/" + e.target.feature.properties.Photo1 + "' >" + e.target.feature.properties.Photo1 + "</a></TD></TR>" +
+                "<TR><TD><b>Project Photo: </b></TD><TD><a href='photos/" + e.target.feature.properties.Photo1 + "' >" + e.target.feature.properties.Photo1 + "</a></TD></TR>" +
                 /*"<TR><TD colspan='2'> <a href='photos/" + e.target.feature.properties.Photo1 + "' target='_blank'><img src='photos/" + e.target.feature.properties.Photo1 + "' width='320'></a></TD></TR>" +*/
 
                 "</TABLE>";
