@@ -239,7 +239,7 @@ function addPoints(data) {
             Review_Date: data[row].Review_Date,
             Status: data[row].Status,
             Regulated_Project: data[row].Regulated_Project,
-            Project_area: data[row].[Project area],
+            Project_area: data[row].'Project area',
             Latitude: data[row].Latitude,
             Longitude: data[row].Longitude,
             Description: data[row].Project_Description,
