@@ -238,8 +238,9 @@ function addPoints(data) {
             Review_Type5: data[row].Review_Type5,
             Review_Date: data[row].Review_Date,
             Status: data[row].Status,
-            Regulated_Project: data[row].Regulated_Project,
-            Project_area: data[row].'Project area',
+            C3_Regulated_Project: data[row].C3_Regulated_Project,
+            Small_Project_Provision_C3i: data[row].Small_Project_Provision_C3i,
+            Greater_Than_1_Acre: data[row].Greater_Than_1_Acre,
             Latitude: data[row].Latitude,
             Longitude: data[row].Longitude,
             Description: data[row].Project_Description,
@@ -266,8 +267,9 @@ function addPoints(data) {
                 "<TR><TD><b>Review Type 5: </b></TD><TD>" + e.target.feature.properties.Review_Type5 + "</TD></TR>" +  
                 "<TR><TD><b>Review Date: </b></TD><TD>" + e.target.feature.properties.Review_Date + "</TD></TR>" +  
                 "<TR><TD><b>Status: </b></TD><TD>" + e.target.feature.properties.Status + "</TD></TR>" +  
-                "<TR><TD><b>Regulated Project?: </b></TD><TD>" + e.target.feature.properties.Regulated_Project + "</TD></TR>" +  
-                "<TR><TD><b>Area of Project: </b></TD><TD>" + e.target.feature.properties.Project_area + "</TD></TR>" +  
+                "<TR><TD><b>C3 Regulated Project?: </b></TD><TD>" + e.target.feature.properties.C3_Regulated_Project + "</TD></TR>" +  
+                "<TR><TD><b>Small Project (Provision C.3.i)?: </b></TD><TD>" + e.target.feature.properties.Small_Project_Provision_C3i + "</TD></TR>" +
+                "<TR><TD><b>>1 acre?: </b></TD><TD>" + e.target.feature.properties.Greater_Than_1_Acre + "</TD></TR>" +  
                 "<TR><TD><b>Latitude: </b></TD><TD>" + e.target.feature.properties.Latitude + "</TD></TR>" +  
                 "<TR><TD><b>Project Description: </b></TD><TD>" + e.target.feature.properties.Description + "</TD></TR>" + 
                 "<TR><TD><b>Longitude: </b></TD><TD>" + e.target.feature.properties.Longitude + "</TD></TR>" +  
