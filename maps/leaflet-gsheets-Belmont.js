@@ -50,7 +50,7 @@ function highlightFeature(e) {
       });
 }    
 
-// Create a new Leaflet map centered on San Carlos
+// Create a new Leaflet map centered on Belmont
 var map = L.map('map', {zoomControl:true, maxZoom:18, minZoom:1}).fitBounds([[37.5377, -122.3229],[37.4977, -122.2629]]);
 
 var hash = new L.Hash(map);
@@ -346,7 +346,7 @@ abstract.onAdd = function (map) {
 abstract.show = function () {
     this._div.classList.remove("abstract");
     this._div.classList.add("abstractUncollapsed");
-    this._div.innerHTML = 'San Carlos Development Review Map';
+    this._div.innerHTML = 'Belmont Development Review Map';
 };
 abstract.addTo(map);
 

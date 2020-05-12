@@ -379,7 +379,7 @@ abstract.onAdd = function (map) {
 abstract.show = function () {
     this._div.classList.remove("abstract");
     this._div.classList.add("abstractUncollapsed");
-    this._div.innerHTML = 'San Carlos Development Review Map';
+    this._div.innerHTML = 'Vallejo Development Review Map';
 };
 abstract.addTo(map);
 
